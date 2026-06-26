@@ -1,0 +1,26 @@
+/* ============================================================
+   Fabula Projects — Spacing, Layout, Radius, Shadow, Motion
+   ------------------------------------------------------------
+   The system breathes. Generous white space, hairline borders,
+   square corners. Structure comes from rules and negative
+   space, not elevation.
+   ============================================================ */
+
+:root {
+  /* ---- Layout ---- */
+  --fp-maxw-wide:   1280px; /* full marketing width */
+  --fp-gutter:      48px;
+
+  /* ---- Radius — square is the default ---- */
+  --fp-radius-0:    0px;
+
+  /* ---- Borders ---- */
+  --fp-border-hair:  1px solid var(--fp-hairline);
+  --fp-border-ink:   1px solid var(--fp-ink);
+
+  /* ---- Motion ---- */
+  /* quiet, refined easing — like a page turning */
+  --fp-ease:        cubic-bezier(0.22, 1, 0.36, 1);
+  --fp-dur-fast:    0.18s;
+  --fp-dur-slow:    0.6s;
+}

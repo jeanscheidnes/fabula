@@ -1,0 +1,30 @@
+/* ============================================================
+   Fabula Projects — Typography
+   ------------------------------------------------------------
+   One family: Jost. Thin & wide-tracked for display, solid for
+   body. Uppercase + generous letter-spacing for labels/display;
+   sentence case for body.
+   ============================================================ */
+
+:root {
+  /* ---- Family ---- */
+  --fp-font-sans: 'Jost', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* ---- Weights ---- */
+  --fp-w-light:    300;
+  --fp-w-regular:  400;
+  --fp-w-medium:   500;
+
+  /* ---- Type scale (px) ---- */
+  --fp-text-xs:   12px;
+  --fp-text-base: 16px;
+  --fp-text-md:   19px;  /* lede */
+
+  /* ---- Letter-spacing (the brand's signature) ---- */
+  --fp-track-tight:  0.02em;
+  --fp-track-normal: 0.05em;
+  --fp-track-wide:   0.12em;  /* display caps        */
+  --fp-track-wider:  0.20em;  /* buttons             */
+  --fp-track-label:  0.28em;  /* labels / metadata   */
+  --fp-track-eyebrow:0.34em;  /* eyebrows            */
+}
