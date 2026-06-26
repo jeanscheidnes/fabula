@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fabula Projects — Stories + Strategy + Systems</title>
+  <link rel="icon" href="assets/fp-badge.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="fabula.css" />
+</head>
+<body>
+  <main class="site">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" data-screen-label="Hero">
+      <img class="hero__img" src="assets/photos/arch-2.png" alt="Architecture rising into a clouded sky, black and white" />
+      <div class="hero__scrim"></div>
+
+      <div class="hero__top">
+        <div class="hero__logo">
+          <img src="assets/fp-horizontal.png" alt="Fabula Projects" />
+        </div>
+        <a class="cta-pill" href="https://www.linkedin.com/in/jeanscheidnes/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+
+      <div class="hero__mid">
+        <h1 class="tagline">
+          <span>Stories</span>
+          <span class="plus" style="color:#fff;">·</span>
+          <span>Strategy</span>
+          <span class="plus" style="color:#fff;">·</span>
+          <span>Systems</span>
+        </h1>
+      </div>
+    </section>
+
+    <!-- ============ INTRO ============ -->
+    <section class="section intro" data-screen-label="Intro">
+      <div class="wrap intro__grid">
+        <div class="copy reveal">
+          <p style="font-size: 33px">Fabula Projects is the marketing communications practice of<br>Jean Scheidnes, driving targeted growth for brands and executives.</p>
+          <p style="font-size: 20px; background: var(--fp-surface); padding: clamp(20px, 2.4vw, 32px)">I'm Jean. Fabula is Latin for story; and storytelling has been at the core of my career, spanning roles in journalism and fashion editorial, PR and social, brand side and agency side, B2B and B2C, internal and external comms.</p>
+        </div>
+        <figure class="intro__portrait reveal">
+          <img src="assets/photos/jean-headshot.jpg" alt="Jean Scheidnes" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ NOT ALL STORIES ============ -->
+    <section class="section section--ink nas" data-screen-label="Not all stories">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="eyebrow">Not all stories</div>
+          <p class="open">
+            <span class="muted">Stories have the power to shift beliefs and behaviors. They can change the trajectory of your business.</span>
+            <span class="turn">But not all stories.</span>
+          </p>
+        </div>
+
+        <div class="beliefs reveal">
+          <p class="beliefs__lead">Your storytelling is only effective if it's:</p>
+          <ul class="beliefs__list">
+            <li>Truthful.</li>
+            <li>Aligned with opportunities.</li>
+            <li>Differentiating.</li>
+          </ul>
+          <p class="beliefs__lead">That's <em>strategy</em>. You also need stories to be:</p>
+          <ul class="beliefs__list">
+            <li>Extracted and crafted with ease, so you stay focused on your clients.</li>
+            <li>Delivered to the right audience at the right time. Consistently.</li>
+          </ul>
+          <p class="beliefs__lead beliefs__close">These take <em>systems</em>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PHOTO BAND ============ -->
+    <div class="band band--single reveal" aria-hidden="true">
+      <figure><img src="assets/photos/arch-1.png" alt="" /></figure>
+    </div>
+
+    <!-- ============ POV ON AI ============ -->
+    <section class="section section--surface pov" data-screen-label="POV on AI">
+      <div class="wrap">
+        <div class="layout">
+          <div class="reveal">
+            <div class="eyebrow">POV on Artificial Intelligence</div>
+            <p class="big">AI is my team.</p>
+            <p class="copy">I'm a solo operator delivering the value of a small agency: senior-level judgment on strategy, with AI doing what used to require a team of specialists. This model — <em>the high-experience, AI-multiplied individual contributor</em> — is the most impactful worker today.</p>
+          </div>
+          <div class="figure reveal">
+            <img src="assets/photos/arch-5.png" alt="Architecture against an open sky, black and white" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section services" data-screen-label="Services">
+      <div class="wrap">
+        <div class="head reveal">
+          <div class="eyebrow">Services</div>
+        </div>
+
+        <div class="grid reveal">
+          <div class="service">
+            <h3>Executive Communications</h3>
+            <p class="desc">PR, thought leadership, ghostwriting, LinkedIn management</p>
+          </div>
+          <div class="service">
+            <h3>Marketing Communications</h3>
+            <p class="desc">Branding, editorial strategy, content factory, media relations</p>
+          </div>
+          <div class="service">
+            <h3>AI<br>Enablement</h3>
+            <p class="desc">I set you up to DIY with AI. For individuals and small teams.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUOTE ============ -->
+    <section class="section section--ink quote" data-screen-label="Quote">
+      <div class="wrap reveal">
+        <div class="quote__text">
+          <blockquote>"You do not rise to the level of your goals. You fall to the level of your systems."</blockquote>
+          <cite>JAMES CLEAR, ATOMIC HABITS</cite>
+        </div>
+        <figure class="quote__figure"></figure>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" data-screen-label="Footer">
+      <div class="stamp reveal">
+        <span class="line"></span>
+        <img src="assets/fp-badge.png" alt="Fabula Projects" />
+        <span class="line"></span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || !('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>

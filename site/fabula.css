@@ -1,0 +1,420 @@
+/* ============================================================
+   Fabula Projects — Website
+   Composes the design tokens (styles.css).
+   Monochrome, geometric, typographic-first. No accent colour.
+   ============================================================ */
+
+.site {
+  background: var(--fp-paper);
+  color: var(--fp-ink);
+  overflow-x: hidden;
+}
+
+.wrap {
+  max-width: var(--fp-maxw-wide);
+  margin: 0 auto;
+  padding: 0 var(--fp-gutter);
+}
+
+/* shared eyebrow */
+.eyebrow {
+  font-size: var(--fp-text-xs);
+  font-weight: var(--fp-w-medium);
+  letter-spacing: var(--fp-track-eyebrow);
+  text-transform: uppercase;
+  color: var(--fp-graphite);
+}
+
+/* shared CTA pill */
+.cta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  font-family: var(--fp-font-sans);
+  font-weight: var(--fp-w-medium);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: var(--fp-track-wider);
+  line-height: 1;
+  white-space: nowrap;
+  padding: 13px 26px;
+  color: var(--fp-paper);
+  border: 1px solid var(--fp-on-ink-soft);
+  border-radius: var(--fp-radius-0);
+  transition: background var(--fp-dur-fast) var(--fp-ease), color var(--fp-dur-fast) var(--fp-ease), border-color var(--fp-dur-fast) var(--fp-ease);
+}
+.cta-pill:hover {
+  background: var(--fp-paper);
+  color: var(--fp-ink);
+  border-color: var(--fp-paper);
+}
+
+/* shared stamp divider (FP badge between two hairlines) */
+.stamp {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 36px);
+}
+.stamp .line { flex: 1; height: 1px; background: var(--fp-hairline); }
+.stamp img { width: 40px; height: 40px; }
+
+/* reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--fp-ease), transform 0.8s var(--fp-ease);
+  will-change: opacity, transform;
+}
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ============================================================
+   HERO — full-bleed architecture + graphic tagline
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 75svh;
+  background: var(--fp-ink);
+  color: var(--fp-paper);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(1) contrast(1.06);
+}
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.60) 0%,
+    rgba(10, 10, 10, 0.28) 34%,
+    rgba(10, 10, 10, 0.28) 58%,
+    rgba(10, 10, 10, 0.70) 100%
+  );
+}
+.hero__top,
+.hero__mid { position: relative; z-index: 2; }
+
+.hero__top {
+  padding: clamp(32px, 4vw, 44px) var(--fp-gutter) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.hero__logo img {
+  height: clamp(38px, 4.6vw, 54px);
+  width: auto;
+  filter: invert(1);
+}
+
+.hero__mid {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px var(--fp-gutter) clamp(72px, 9vw, 104px);
+  text-align: center;
+}
+.tagline {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.18em 0.42em;
+  font-weight: var(--fp-w-light);
+  text-transform: uppercase;
+  letter-spacing: var(--fp-track-wide);
+  line-height: 1.04;
+  font-size: clamp(24px, 5.4vw, 64px);
+  white-space: nowrap;
+  text-shadow: 0 2px 60px rgba(10, 10, 10, 0.4);
+}
+.tagline .plus {
+  color: var(--fp-on-ink-soft);
+  font-weight: var(--fp-w-light);
+}
+
+/* ============================================================
+   SECTION scaffolding
+   ============================================================ */
+.section { padding: clamp(56px, 7vw, 88px) 0; border-bottom: var(--fp-border-hair); }
+.section--surface { background: var(--fp-surface); }
+.section--ink {
+  background: var(--fp-ink);
+  color: var(--fp-paper);
+  border-bottom: none;
+}
+.section--ink .eyebrow { color: var(--fp-on-ink-soft); }
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+.intro__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 52ch) minmax(280px, 400px);
+  justify-content: center;
+  gap: clamp(48px, 7vw, 112px);
+  align-items: stretch;
+}
+.intro .copy {
+  max-width: 52ch;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.4vw, 32px);
+}
+.intro__portrait {
+  margin: 0;
+  padding: clamp(16px, 2vw, 32px);
+  display: flex;
+}
+.intro__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  filter: grayscale(1) contrast(1.04);
+}
+.intro .copy p {
+  font-weight: var(--fp-w-light);
+  letter-spacing: var(--fp-track-tight);
+  line-height: 1.5;
+  color: var(--fp-ink);
+  text-wrap: pretty;
+}
+
+/* ============================================================
+   NOT ALL STORIES — the ink centrepiece
+   ============================================================ */
+.section--ink.nas {
+  background: #1b1a18;   /* warm near-black — softer than pure ink, easier on the eyes */
+  color: #ece7df;        /* warm off-white — less glare than pure white */
+}
+.nas .eyebrow { color: rgba(236,231,223,0.6); }
+.nas .open {
+  margin-top: clamp(32px, 4vw, 48px);
+  font-weight: var(--fp-w-light);
+  letter-spacing: var(--fp-track-tight);
+  line-height: 1.3;
+  font-size: clamp(28px, 4vw, 52px);
+  max-width: 22ch;
+  text-wrap: balance;
+}
+.nas .open .muted { color: rgba(236,231,223,0.74); }
+.nas .open .turn { display: block; margin-top: 0.5em; color: #f5f1ea; }
+
+.nas .wrap { container-type: inline-size; }
+.nas .beliefs {
+  margin: clamp(56px, 7vw, 96px) auto 0;
+  max-width: 60ch;
+  font-weight: var(--fp-w-light);
+  letter-spacing: var(--fp-track-tight);
+  font-size: clamp(19px, 2vw, 26px);
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+.beliefs__lead {
+  color: #f5f1ea;
+  margin-top: clamp(40px, 5vw, 64px);
+  white-space: nowrap;
+  margin-left: calc(-0.5 * (100cqw - min(60ch, 100cqw)));
+}
+.beliefs__lead:first-child {
+  margin-top: 0;
+}
+.beliefs__lead em { font-style: italic; }
+.beliefs__list {
+  list-style: none;
+  margin: clamp(20px, 2.4vw, 30px) 0 0;
+  padding-left: clamp(28px, 3.2vw, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 28px);
+}
+.beliefs__list li { color: rgba(236,231,223,0.88); }
+.beliefs__close { margin-top: clamp(40px, 5vw, 64px); }
+
+/* ============================================================
+   FULL-BLEED PHOTO BAND
+   ============================================================ */
+.band {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--fp-hairline);
+}
+.band figure {
+  margin: 0;
+  height: clamp(300px, 36vw, 500px);
+  overflow: hidden;
+  background: var(--fp-ink);
+}
+.band img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+  transition: transform var(--fp-dur-slow) var(--fp-ease);
+}
+.band figure:hover img { transform: scale(1.04); }
+.band--single { grid-template-columns: 1fr; }
+
+/* ============================================================
+   POV ON AI
+   ============================================================ */
+.pov .layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+}
+.pov .big {
+  font-weight: var(--fp-w-light);
+  letter-spacing: var(--fp-track-tight);
+  line-height: 1.16;
+  font-size: clamp(30px, 4vw, 52px);
+  margin: 24px 0 28px;
+}
+.pov p.copy {
+  font-size: var(--fp-text-md);
+  line-height: 1.72;
+  color: var(--fp-graphite);
+  max-width: 56ch;
+}
+.pov p.copy em { font-style: italic; color: var(--fp-ink); }
+.pov .figure {
+  aspect-ratio: 4 / 5;
+  background: var(--fp-ink);
+  border: var(--fp-border-hair);
+  overflow: hidden;
+}
+.pov .figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services .head { margin-bottom: clamp(48px, 6vw, 72px); }
+.services .grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: var(--fp-border-ink);
+}
+.service {
+  padding: clamp(32px, 3vw, 44px) clamp(28px, 2.6vw, 40px) clamp(32px, 3vw, 40px);
+  border-left: var(--fp-border-ink);
+  background: var(--fp-surface);
+  display: flex;
+  flex-direction: column;
+}
+.service:first-child { border-left: none; }
+.service h3 {
+  font-weight: var(--fp-w-regular);
+  font-size: clamp(24px, 3vw, 40px);
+  letter-spacing: var(--fp-track-tight);
+  line-height: 1.15;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+.service .desc {
+  margin-top: 18px;
+  font-size: var(--fp-text-base);
+  line-height: 1.65;
+  color: var(--fp-graphite);
+  max-width: 30ch;
+}
+
+/* ============================================================
+   QUOTE
+   ============================================================ */
+.quote .wrap {
+  display: grid;
+  grid-template-columns: 1.55fr 0.45fr;
+  align-items: center;
+  gap: clamp(40px, 6vw, 96px);
+}
+.quote { padding-bottom: clamp(44px, 5vw, 72px); }
+.quote__text { min-width: 0; }
+.quote blockquote {
+  font-weight: var(--fp-w-light);
+  letter-spacing: var(--fp-track-tight);
+  line-height: 1.25;
+  font-size: clamp(26px, 3.4vw, 44px);
+  max-width: 42ch;
+  text-wrap: balance;
+  margin: 40px 0 0;
+}
+.quote cite {
+  display: block;
+  margin-top: 40px;
+  font-style: normal;
+  font-size: var(--fp-text-xs);
+  font-weight: var(--fp-w-medium);
+  letter-spacing: var(--fp-track-label);
+  text-transform: uppercase;
+  color: var(--fp-on-ink-soft);
+}
+.quote__figure {
+  margin: 0;
+  aspect-ratio: 3 / 2;
+  height: auto;
+  overflow: hidden;
+  background: var(--fp-ink);
+}
+
+/* ============================================================
+   FOOTER — closing brand lockup only
+   ============================================================ */
+.footer {
+  background: var(--fp-ink);
+  padding: clamp(8px, 1vw, 16px) 0 clamp(52px, 6vw, 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(28px, 3vw, 40px);
+}
+.footer .stamp {
+  margin-top: 0;
+  width: min(520px, 80%);
+}
+.footer .stamp .line { background: var(--fp-on-ink-hair); }
+.footer .stamp img {
+  width: 48px;
+  height: 48px;
+  filter: invert(1);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 860px) {
+  .intro .copy { max-width: 100%; }
+  .intro__grid { grid-template-columns: 1fr; }
+  .intro__portrait { padding: 0; max-width: 360px; }
+  .pov .layout { grid-template-columns: 1fr; }
+  .pov .figure { max-width: 420px; }
+  .services .grid { grid-template-columns: 1fr; }
+  .service { border-left: none; border-top: var(--fp-border-ink); min-height: 0; }
+  .service:first-child { border-top: none; }
+}
+@media (max-width: 680px) {
+  .beliefs__lead { white-space: normal; margin-left: 0; }
+  .band { grid-template-columns: 1fr; }
+  .band figure { height: 280px; }
+  .quote .wrap { grid-template-columns: 1fr; }
+  .quote__figure { height: 300px; }
+}

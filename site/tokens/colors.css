@@ -1,0 +1,45 @@
+/* ============================================================
+   Fabula Projects — Colour
+   ------------------------------------------------------------
+   A disciplined monochrome system. Ink and Paper do the heavy
+   lifting; the greys are for hierarchy and hairlines only.
+   ============================================================ */
+
+:root {
+  /* ---- Base ramp (light → dark) ---- */
+  --fp-paper:    #FFFFFF; /* base background, reversed text on ink */
+  --fp-surface:  #F4F3F1; /* warm off-white panel / section fill   */
+  --fp-hairline: #E4E2DE; /* 1px rules, borders, dividers          */
+  --fp-ash:      #B4B4B4; /* tertiary text, disabled, tags         */
+  --fp-graphite: #6E6E6E; /* muted / secondary body text           */
+  --fp-ink:      #0A0A0A; /* primary — text, fills, the mark       */
+
+  /* ---- Reversed (on-ink) opacities ---- */
+  --fp-on-ink-strong: rgba(255,255,255,1);
+  --fp-on-ink-muted:  rgba(255,255,255,0.62);
+  --fp-on-ink-soft:   rgba(255,255,255,0.45);
+  --fp-on-ink-hair:   rgba(255,255,255,0.14);
+
+  /* ---- Semantic aliases ---- */
+  --fp-bg:            var(--fp-paper);
+  --fp-bg-alt:        var(--fp-surface);
+  --fp-bg-inverse:    var(--fp-ink);
+
+  --fp-text:          var(--fp-ink);     /* primary text          */
+  --fp-text-muted:    var(--fp-graphite);/* secondary / supporting*/
+  --fp-text-subtle:   var(--fp-ash);     /* tertiary / metadata   */
+  --fp-text-inverse:  var(--fp-paper);   /* text on ink           */
+
+  --fp-border:        var(--fp-hairline);
+  --fp-border-strong: var(--fp-ink);
+
+  --fp-surface-card:  var(--fp-paper);
+  --fp-surface-sunken: var(--fp-surface);
+
+  /* ---- Interaction ---- */
+  --fp-focus-ring:    var(--fp-ink);
+  --fp-selection-bg:  var(--fp-ink);
+  --fp-selection-fg:  var(--fp-paper);
+}
+
+::selection { background: var(--fp-selection-bg); color: var(--fp-selection-fg); }
