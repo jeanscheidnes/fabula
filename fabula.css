@@ -422,3 +422,13 @@
   .quote .wrap { grid-template-columns: 1fr; }
   .quote__figure { height: 300px; }
 }
+@media (max-width: 480px) {
+  .hero__top { gap: 12px; }
+  .cta-pill {
+    font-size: 10px;
+    letter-spacing: var(--fp-track-normal);
+    padding: 10px 14px;
+    white-space: normal;
+    text-align: center;
+  }
+}
