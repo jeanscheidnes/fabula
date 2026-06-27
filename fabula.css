@@ -423,12 +423,6 @@
   .quote__figure { height: 300px; }
 }
 @media (max-width: 480px) {
-  .hero { min-height: 46svh; }
-  .hero__mid { padding-left: 16px; padding-right: 16px; }
-  .tagline {
-    font-size: clamp(13px, 3.6vw, 24px);
-    gap: 0.18em 0.3em;
-  }
   .hero__top { gap: 12px; }
   .cta-pill {
     font-size: 10px;
