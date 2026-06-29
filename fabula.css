@@ -236,7 +236,7 @@
 }
 .beliefs__lead {
   color: #f5f1ea;
-  margin-top: clamp(40px, 5vw, 64px);
+  margin-top: clamp(28px, 3.2vw, 40px);
   white-space: nowrap;
   margin-left: calc(-0.5 * (100cqw - min(52ch, 100cqw)));
 }
@@ -253,7 +253,7 @@
   gap: clamp(16px, 2vw, 28px);
 }
 .beliefs__list li { color: rgba(236,231,223,0.88); }
-.beliefs__close { margin-top: clamp(40px, 5vw, 64px); }
+.beliefs__close { margin-top: clamp(28px, 3.2vw, 40px); }
 
 /* ============================================================
    FULL-BLEED PHOTO BAND
