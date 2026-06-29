@@ -209,10 +209,10 @@
   margin-top: clamp(32px, 4vw, 48px);
   font-weight: var(--fp-w-light);
   letter-spacing: var(--fp-track-tight);
-  line-height: 1.3;
-  font-size: clamp(28px, 4vw, 52px);
-  max-width: 22ch;
-  text-wrap: balance;
+  line-height: 1.5;
+  font-size: var(--fp-text-md);
+  max-width: 52ch;
+  text-wrap: pretty;
 }
 .nas .open .muted { color: rgba(236,231,223,0.74); }
 .nas .open .turn { display: block; margin-top: 0.5em; color: #f5f1ea; }
@@ -220,18 +220,18 @@
 .nas .wrap { container-type: inline-size; }
 .nas .beliefs {
   margin: clamp(56px, 7vw, 96px) auto 0;
-  max-width: 60ch;
+  max-width: 52ch;
   font-weight: var(--fp-w-light);
   letter-spacing: var(--fp-track-tight);
-  font-size: clamp(19px, 2vw, 26px);
-  line-height: 1.35;
+  font-size: var(--fp-text-md);
+  line-height: 1.5;
   text-wrap: pretty;
 }
 .beliefs__lead {
   color: #f5f1ea;
   margin-top: clamp(40px, 5vw, 64px);
   white-space: nowrap;
-  margin-left: calc(-0.5 * (100cqw - min(60ch, 100cqw)));
+  margin-left: calc(-0.5 * (100cqw - min(52ch, 100cqw)));
 }
 .beliefs__lead:first-child {
   margin-top: 0;
