@@ -222,7 +222,7 @@
   max-width: 22ch;
   text-wrap: balance;
 }
-.nas .open .turn { display: block; margin-top: 0.5em; color: #f5f1ea; }
+.nas .open .turn { display: block; margin-top: clamp(20px, 2.4vw, 32px); color: #f5f1ea; }
 
 .nas .wrap { container-type: inline-size; }
 .nas .beliefs {
