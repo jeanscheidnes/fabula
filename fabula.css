@@ -214,7 +214,14 @@
   max-width: 52ch;
   text-wrap: pretty;
 }
-.nas .open .muted { color: rgba(236,231,223,0.74); }
+.nas .open .muted {
+  display: block;
+  color: rgba(236,231,223,0.74);
+  line-height: 1.16;
+  font-size: clamp(30px, 4vw, 52px);
+  max-width: 22ch;
+  text-wrap: balance;
+}
 .nas .open .turn { display: block; margin-top: 0.5em; color: #f5f1ea; }
 
 .nas .wrap { container-type: inline-size; }
